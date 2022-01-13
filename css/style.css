@@ -1,0 +1,133 @@
+html,
+body {
+  box-sizing: border-box;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+body {
+  min-height: 100vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.h2{
+  font-size: 3vh;
+  font-weight: bold;
+}
+.header__h2,
+.footer__h2,
+.main__article-h2{
+  margin: auto;
+}
+.header,
+.footer {
+  background-color: lightgrey;
+}
+.header{
+  display: flex;
+}
+.main {
+  background-color: rgb(253, 253, 228);
+}
+.main__section,
+.aside {
+  padding-top: 1vh;
+  text-align: center;
+}
+.aside {
+    background-color: rgba(178, 238, 178, 0.707);
+  }
+.main__article-1,
+.main__article-2,
+.main__article-3 {
+  display: flex;
+  background-color: rgb(253, 237, 172);
+}
+.main,
+.footer{
+  padding: 2%;
+}
+.footer__section {
+  display: flex;
+  background-color: #fff;
+}
+
+  .container{
+    min-height: 100vh;
+    display: grid;
+
+    grid-template-rows: 
+    [full-start] 10%
+    [header-end main-start] 1fr
+    [main-end footer-start] 20%
+    [footer-end full-end];
+
+    grid-template-columns: 
+    [full-start main-start] 1fr 
+    [main-middle] 1fr 
+    [main-end aside-start] 1fr 
+    [aside-end full-end];
+  }
+  .header{
+    grid-area: full-start / full-start / header-end / full-end;
+  }
+  .main {
+    grid-area: main-start / main-start / main-end / main-end;
+    display: grid;
+    grid-template-rows: 1.5fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2%;
+    grid-template-areas: 
+    "main-section main-section"
+    "article-1 article-2"
+    "article-3 article-3";
+  }
+  .main__section {
+    grid-area: main-section;
+  }
+  .main__article-1 {
+    grid-area: article-1;
+  }
+  .main__article-2 {
+    grid-area: article-2;
+  }
+  .main__article-3{
+    grid-area: article-3;
+  }
+  .aside {
+    grid-area: main-start / aside-start / main-end / aside-end;
+  }
+  .footer {
+    grid-area: footer-start / full-start / footer-end / full-end;
+    display: grid;
+    grid-gap: 3%;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-around;
+  }
+
+/* @media screen and (max-width: 767px) {
+  .container{
+    min-height: 100vh;
+  }
+  .header{
+    height: 70px;
+  }
+  .main{
+    display: flex;
+    flex-direction: column;
+  }
+  .main__article{
+    height: 10vh;
+  }
+  .aside {
+    height: 20vh;
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer__section,
+  .main__article{
+    height: 10vh;
+    padding: 2vw;
+    margin: 2vw;
+  }
+} */
